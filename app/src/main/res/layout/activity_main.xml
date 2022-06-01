@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:elevation="2dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgvw_preview_selected_image"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_search"
+        android:layout_margin="@dimen/margin_m"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_texture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgvw_preview_selected_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/margin_m"
+        android:layout_marginTop="@dimen/lg_margin"
+        android:text="@string/create_texture"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_model3d"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_create_texture"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/margin_m"
+        android:layout_marginTop="@dimen/lg_margin"
+        android:text="@string/create_model_3d"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcclrvw_models"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_create_model3d"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/margin_m"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyt_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77000000"
+        android:visibility="gone">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

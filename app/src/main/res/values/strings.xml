@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">3D Modeling HMS</string>
+    <string name="huawei_api_key">DAEDAB16uUB087vOev3i6IhuGl4G6mhFHrXEyHOuGQKtCGWZu+bX3RQe94kCkw4y9IbblcgC8eGR2KO/SN/gflT2g5ZZ3EmyQ2twzA==</string>
+    <string name="create_texture">Create Texture</string>
+    <string name="create_model_3d">Create model 3d</string>
+</resources>
