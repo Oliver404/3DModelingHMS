@@ -26,6 +26,7 @@ public class Model3DVH extends RecyclerView.ViewHolder implements View.OnClickLi
     private AppCompatTextView txtvwType;
     private AppCompatTextView txtvwStatus;
     private AppCompatImageButton btnAction;
+    private AppCompatImageButton btnDownload;
     private AppCompatImageButton btnDelete;
     private OnActionClickListener listener;
 
@@ -48,9 +49,11 @@ public class Model3DVH extends RecyclerView.ViewHolder implements View.OnClickLi
         txtvwType = itemView.findViewById(R.id.txtvw_type);
         txtvwStatus = itemView.findViewById(R.id.txtvw_status);
         btnAction = itemView.findViewById(R.id.btn_item_action);
+        btnDownload = itemView.findViewById(R.id.btn_item_download);
         btnDelete = itemView.findViewById(R.id.btn_item_delete);
 
         btnAction.setOnClickListener(this);
+        btnDownload.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
     }
 
@@ -114,6 +117,10 @@ public class Model3DVH extends RecyclerView.ViewHolder implements View.OnClickLi
             else
                 listener.checkStatus(item.getTaskID());
         }
+        else if (v.getId() == R.id.btn_item_download) {
+//            if (item.getStatus() == ItemEnt.STATUS_MODEL_SUCCESS)
+                listener.downloadModel(item.getTaskID());
+        }
         else
             listener.deleteModel(item.getTaskID());
     }
@@ -122,5 +129,6 @@ public class Model3DVH extends RecyclerView.ViewHolder implements View.OnClickLi
         void previewModel(String taskID);
         void deleteModel(String taskID);
         void checkStatus(String taskID);
+        void downloadModel(String taskID);
     }
 }

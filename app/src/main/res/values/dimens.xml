@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="md_margin">8dp</dimen>
     <dimen name="md_padding">8dp</dimen>
     <dimen name="lg_margin">16dp</dimen>
 </resources>

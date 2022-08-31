@@ -34,4 +34,11 @@ public class SharedPreferencesService {
         editor.putString(itemEnt.getPath(), itemEnt.toString());
         editor.apply();
     }
+
+    public void popModel(ItemEnt itemEnt) {
+        SharedPreferences.Editor editor = SHARED_PREFERENCES.edit();
+
+        editor.remove(itemEnt.getPath());
+        editor.apply();
+    }
 }

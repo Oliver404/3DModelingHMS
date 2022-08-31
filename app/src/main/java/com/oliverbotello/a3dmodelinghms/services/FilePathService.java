@@ -61,7 +61,10 @@ public class FilePathService {
                     return getDataColumn(context, contentUri, selection, selectionArgs);
                 }
             }
-        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+        } else if (isHuaweiUri(uri)) {
+            return uri.toString().replace("content://com.huawei.filemanager.share.fileprovider/root/", "");
+        }
+        else if ("content".equalsIgnoreCase(uri.getScheme())) {
             return getDataColumn(context, uri, null, null);
         } else if ("file".equalsIgnoreCase(uri.getScheme())) {
             return uri.getPath();
@@ -102,6 +105,10 @@ public class FilePathService {
 
     private boolean isDownloadsUri(Uri uri) {
         return DOWNLOADS_CONTENT_URI.equals(uri.getAuthority());
+    }
+
+    private boolean isHuaweiUri(Uri uri) {
+        return uri.toString().contains("content://com.huawei.filemanager.share.fileprovider/root/");
     }
 
     private boolean isMediaUri(Uri uri) {
